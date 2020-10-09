@@ -1,0 +1,3 @@
+docker build -t svnam:0.1 .
+# To run phpMyAdmin...
+#docker run --name pma -d --link svnam:db -p 8082:80 phpmyadmin/phpmyadmin
