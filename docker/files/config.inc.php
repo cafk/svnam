@@ -60,7 +60,7 @@ $CONF['database_tablespace']    = '';
 $CONF['session_in_db']                  = 'YES';
 
 $CONF['website_charset']                = 'iso-8859-15';
-$CONF['website_url']                    = 'http://localhost/svn_access_manager';
+$CONF['website_url']                    = 'http://localhost:7280/';
 
 // Sort order for user
 $CONF['user_sort_fields']               = "name,givenname";
@@ -104,7 +104,7 @@ $CONF['password_expires_warn']  = 50;
 $CONF['expire_password']                = '1';
 
 # valid values for pwcrypt are sha, apr-md5, md5, or crypt
-$CONF['pwcrypt']                                = 'md5';
+$CONF['pwcrypt']                                = 'apr-md5';
 
 $CONF['copyright']                              = '(C) 2008-2018 Thomas Krieger (tom(at)svn-access-manager(dot)org)';
 

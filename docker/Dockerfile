@@ -3,13 +3,13 @@ FROM centos:7
 MAINTAINER Thomas Krieger <tom@svn-access-manager.org>
 LABEL Description="Docker container for SVN Access Manager on PHP7" Version="0.5.7.0"
 
-ENV CHARSET=latin1
-ENV COLLATION=latin1_swedish_ci
+ENV CHARSET=utf8
+ENV COLLATION=utf8_general_ci
 ENV DBHOST=localhost
 ENV DBNAME=svnam
 ENV DBUSER=svnam
 ENV DBPASS=svnampass
-ENV SVNAMVERSION=branches/svnam-0.5-install-fix
+ENV SVNAMVERSION=branches/svnam-0-6
 
 ENV MYSQL_ROOT_PASSWORD=rootpw
 ENV MYSQL_DATABASE=svnam
@@ -27,12 +27,12 @@ RUN curl -l -k -s http://repo.webtatic.com/yum/el7/webtatic-release.rpm -o /tmp/
 
 RUN yum -y install mysql unzip tar curl subversion httpd mod_dav_svn \
                    viewvc php70w php70w-cli php70w-mbstring systemd \
-                   php70w-bcmath php70w-mcrypt php70w-mysql php70w-ldap python34-devel \
+                   php70w-bcmath php70w-mcrypt php70w-mysql php70w-ldap python3-devel \
                    mariadb-server bind-utils pwgen psmisc vim-enhanced && \
     yum clean all && \
     rm -rf /var/cache/yum && \
     mkdir -p /usr/share && \
-    curl -l -k -s https://bootstrap.pypa.io/get-pip.py | python3.4 && \
+    curl -l -k -s https://bootstrap.pypa.io/get-pip.py | python3 && \
     pip3 install chaperone
 
 COPY files/svn-access-manager.conf /etc/httpd/conf.d/svn-access-manager.conf
@@ -79,4 +79,4 @@ EXPOSE 80
 
 VOLUME [ "/var/log/httpd", "/etc/svn-access-manager", "/svn/repos", "/var/lib/mysql", "/var/log/mariadb" ]
 
-ENTRYPOINT ["/usr/bin/chaperone"]
+ENTRYPOINT ["/usr/local/bin/chaperone"]

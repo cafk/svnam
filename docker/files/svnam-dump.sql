@@ -165,16 +165,6 @@ CREATE TABLE `sessions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sessions`
---
-
-LOCK TABLES `sessions` WRITE;
-/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('qj0e2kd7j14ahqmajguehhq6p6',1516609627,'SVNSESSID|a:36:{s:8:\"username\";s:5:\"admin\";s:4:\"name\";s:7:\"Admin\";s:9:\"givenname\";s:6:\"Test\";s:5:\"admin\";s:1:\"y\";s:16:\"password_expired\";i:0;s:9:\"helptopic\";s:16:\"listaccessrights\";s:11:\"usercounter\";i:0;s:11:\"repocounter\";i:0;s:14:\"projectcounter\";i:0;s:12:\"rightcounter\";i:0;s:8:\"max_mark\";i:2;s:4:\"mark\";a:3:{i:0;s:1:\"1\";i:1;s:1:\"3\";i:2;s:1:\"2\";}s:12:\"groupcounter\";i:0;s:10:\"logcounter\";i:0;s:5:\"group\";s:1:\"1\";s:9:\"projectid\";s:1:\"1\";s:4:\"task\";s:6:\"change\";s:9:\"svnmodule\";s:5:\"Test1\";s:10:\"modulepath\";s:1:\"/\";s:4:\"path\";a:1:{i:0;s:0:\"\";}s:7:\"pathcnt\";i:0;s:8:\"reponame\";s:5:\"Test1\";s:8:\"repopath\";s:23:\"file:///svn/repos/test1\";s:8:\"repouser\";s:0:\"\";s:12:\"repopassword\";s:0:\"\";s:12:\"pathselected\";s:1:\"/\";s:9:\"validfrom\";s:10:\"01.01.2018\";s:10:\"validuntil\";s:10:\"30.04.2018\";s:11:\"accessright\";s:4:\"read\";s:6:\"userid\";s:1:\"1\";s:7:\"groupid\";s:1:\"0\";s:7:\"rightid\";s:1:\"3\";s:4:\"user\";s:1:\"2\";s:4:\"date\";s:10:\"01/18/2018\";s:5:\"valid\";s:8:\"20180118\";s:5:\"right\";s:0:\"\";}');
-/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `svn_access_rights`
 --
 
