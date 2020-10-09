@@ -12,12 +12,12 @@ Let's have a small example.
 
 Repository testrepo:
 
-trunk
-     /dir1
-     /dir2
-          /dir3
-          /dir4
-     /dir5
+trunk 
+      /dir1 
+      /dir2 
+          /dir3 
+          /dir4 
+      /dir5 
 
 Let's assume that there're two users defined for this repository, user A and
 user B. User A should have read access to the whole repository but should only
@@ -28,20 +28,20 @@ any access.
 You can set the access rights with SVN Access Manager according to this created
 access file:
 
-[testrepo:/trunk/]
-A = r
-B = rw
-
-[testrepo:/trunk/dir2]
-A = rw
-
-[testrepo:/trunk/dir2/dir3]
-A =
-
-[testrepo:/trunk/dir2/dir4]
-A =
-
-[testrepo:/trunk/dir5]
+[testrepo:/trunk/] 
+A = r 
+B = rw 
+ 
+[testrepo:/trunk/dir2] 
+A = rw 
+ 
+[testrepo:/trunk/dir2/dir3] 
+A = 
+ 
+[testrepo:/trunk/dir2/dir4] 
+A = 
+ 
+[testrepo:/trunk/dir5] 
 B = 
  
 
