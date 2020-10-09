@@ -1,6 +1,5 @@
 FROM centos:7
 
-MAINTAINER Thomas Krieger <tom@svn-access-manager.org>
 LABEL Description="Docker container for SVN Access Manager on PHP7" Version="0.5.7.0"
 
 ENV CHARSET=utf8
@@ -9,7 +8,6 @@ ENV DBHOST=localhost
 ENV DBNAME=svnam
 ENV DBUSER=svnam
 ENV DBPASS=svnampass
-ENV SVNAMVERSION=branches/svnam-0-6
 
 ENV MYSQL_ROOT_PASSWORD=rootpw
 ENV MYSQL_DATABASE=svnam
@@ -25,7 +23,7 @@ RUN curl -l -k -s http://repo.webtatic.com/yum/el7/webtatic-release.rpm -o /tmp/
     yum -y localinstall /tmp/webtatic-release.rpm /tmp/epel-release-latest-7.noarch.rpm && \
     rpm --import /etc/pki/rpm-gpg/RPM*
 
-RUN yum -y install mysql unzip tar curl subversion httpd mod_dav_svn \
+RUN yum -y install mysql unzip tar curl subversion httpd git mod_dav_svn \
                    viewvc php70w php70w-cli php70w-mbstring systemd \
                    php70w-bcmath php70w-mcrypt php70w-mysql php70w-ldap python3-devel \
                    mariadb-server bind-utils pwgen psmisc vim-enhanced && \
@@ -40,7 +38,7 @@ COPY files/php.ini /etc/
 COPY files/httpd.conf /etc/httpd/conf/httpd.conf
 
 RUN cd /usr/share && \
-    /bin/svn checkout https://svn.code.sf.net/p/svn-access-mana/code/${SVNAMVERSION} svn-access-manager && \
+    /bin/git clone https://github.com/cafk/svnam.git svn-access-manager && \
     chown -R 27:27 svn-access-manager && \
     mkdir /etc/svn && \
     mkdir /etc/svn-access-manager && \
